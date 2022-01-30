@@ -1,0 +1,101 @@
+/* **********************
+ * CSC-20004 2021/22    *
+ * Java Collections     *
+ * **********************/
+package uk.ac.keele.csc20004;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+/** A concrete implementation of {@link DataRecordCollection} using an array for 
+ * internal storage.
+ * The array of DataRecord has an initial size, which will be increased as more 
+ * data are read in. Increasing the size is transparent to the end user, but 
+ * it is costly, as a new array is allocated and old data must be copied over.
+ *
+ * @author Marco Ortolani
+ */
+public class DataRecordDynArray extends DataRecordCollection {
+    private static final int BATCH_SIZE = 10;
+    private DataRecord[] storage = new DataRecord[BATCH_SIZE];
+    
+    /** A public constructor, providing a concrete implementation for the one in 
+     * the abstract superclass. 
+     * The constructor just builds a buffered reader, and calls the other (non public)
+     * constructor.
+     * 
+     * @param inputFile the name of the file containing the csv data
+     * @throws FileNotFoundException if the input file cannot be found/opened
+     */
+    public DataRecordDynArray(String inputFile) throws FileNotFoundException {
+        this(new BufferedReader(new FileReader(inputFile)));
+    }
+    
+    /** This constructor is not supposed to be used by end users.
+     * 
+     * @param r a buffered stream to read data from
+     */
+    DataRecordDynArray(BufferedReader r) {
+        super(r);
+        
+         /* YOUR CODE HERE */
+         /* You may use super.loadDataRecord() from the superclass to read
+            DataRecords from the csv file.
+            You need to store such DataRecords in the 'storage' private field,
+            increasing its size if necessary.
+         */
+
+        // delete the next line 
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    
+    /** This method returns the first entry of the collection.
+     * It is the implementation of the abstract method in the superclass.
+     * 
+     * @see DataRecordCollection#first()
+     * @return the first entry of the csv as a DataRecord
+     */
+    @Override
+    public DataRecord first() {
+        // delete the next line and write your code here
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    /** This methods returns the next entry of the collection, reading more data
+     * from the file if necessary.
+     * It is the implementation of the abstract method in the superclass.
+     * 
+     * @see DataRecordCollection#next()
+     * @return the next entry as a DataRecord (may be null, if EOF reached)
+     */
+    @Override
+    public DataRecord next() {
+        // delete the next line and write your code here
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    /** Checks if we have scanned through the entire collection.
+     * It is the implementation of the abstract method in the superclass.
+     * 
+     * @see DataRecordCollection#atEnd()
+     * @return true if we have scanned all entries
+     */
+    @Override
+    public boolean atEnd() {
+        // delete the next line and write your code here
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    /** This method returns the current number of entries read into the collection
+     * 
+     * @return the number of entries read so far in the collection
+     */
+    @Override
+    public int size() {
+        // delete the next line and write your code here
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+}
